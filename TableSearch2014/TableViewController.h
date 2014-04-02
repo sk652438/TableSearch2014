@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TableViewController.h
 //  TableSearch2014
 //
 //  Created by Jay Versluis on 02/04/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TableViewController : UITableViewController
 
 @end
