@@ -44,7 +44,13 @@
                             <outlet property="delegate" destination="rJF-wT-mAJ" id="T67-Zi-3eD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WKR-dc-hos"/>
+                    <navigationItem key="navigationItem" id="WKR-dc-hos">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="WUI-x7-NHd">
+                            <connections>
+                                <action selector="showSearchBar:" destination="rJF-wT-mAJ" id="gAU-rp-7Xd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="5YN-3J-gbH" id="k5C-2c-f9P"/>
                         <outlet property="searchDisplayController" destination="MDa-7B-jCp" id="PAZ-h8-hDX"/>

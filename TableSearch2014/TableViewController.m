@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSArray *searchResults;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
+- (IBAction)showSearchBar:(id)sender;
+
 @end
 
 @implementation TableViewController
@@ -45,6 +47,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    // scroll the search bar off-screen
+    CGRect newBounds = self.tableView.bounds;
+    newBounds.origin.y = newBounds.origin.y + self.searchBar.bounds.size.height;
+    self.tableView.bounds = newBounds;
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,6 +124,10 @@
     self.searchResults = [self.allData filteredArrayUsingPredicate:predicate];
 }
 
+- (IBAction)showSearchBar:(id)sender {
+    
+    [self.searchDisplayController setActive:YES animated:YES];
+}
 
 
 
