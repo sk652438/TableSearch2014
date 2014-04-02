@@ -124,6 +124,13 @@
     self.searchResults = [self.allData filteredArrayUsingPredicate:predicate];
 }
 
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        [self viewWillAppear:YES];
+    }
+}
+
 - (IBAction)showSearchBar:(id)sender {
     
     [self.searchDisplayController setActive:YES animated:YES];
